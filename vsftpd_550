@@ -1,0 +1,3 @@
+#about vsftpd 550 permission denied
+find file /etc/vsftpd.conf
+and delete the # before the write_enable=YES/NO
