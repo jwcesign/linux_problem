@@ -1,0 +1,24 @@
+sudo apt-get install pptpd
+
+
+sudo nano /etc/pptpd.conf
+localip 192.168.0.1
+remoteip 192.168.0.234-238,192.168.0.245
+
+
+sudo nano /etc/ppp/pptpd-options
+ms-dns 121.42.42.51
+ms-dns 114.114.114.114
+
+
+sudo nano /etc/ppp/chap-secrets
+zhangsan pptpd 123456 *
+lisi pptpd 123456 *
+
+
+sudo nano /etc/sysctl.conf
+net.ipv4.ip_forward=1
+sudo sysctl –p
+
+
+sudo iptables -t nat -A POSTROUTING -s 192.168.0.0/24 -o eth0 -j MASQUERADE
