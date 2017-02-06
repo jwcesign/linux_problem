@@ -1,0 +1,7 @@
+#find my.cnf
+locate my.cnf
+
+#then find "bind-address=127.0.0.1" and add # before it
+
+#then find [mysql] and add the follow sentence(#####DNS######)
+skip-name-resolve
