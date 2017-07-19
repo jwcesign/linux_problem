@@ -96,6 +96,8 @@
 (setq visible-bell t)
 ;;关闭烦人的出错时的提示声
 
+
+
 (setq inhibit-startup-message t)
 ;;关闭emacs启动时的画面
 
