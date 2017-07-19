@@ -1,0 +1,41 @@
+(custom-set-variables
+ ;; custom-set-variables was added by Custom.
+ ;; If you edit it by hand, you could mess it up, so be careful.
+ ;; Your init file should contain only one such instance.
+ ;; If there is more than one, they won't work right.
+ '(package-selected-packages
+   (quote
+    (elpy pos-tip popup-complete fuzzy yasnippet auto-complete rich-minority))))
+(custom-set-faces
+ ;; custom-set-faces was added by Custom.
+ ;; If you edit it by hand, you could mess it up, so be careful.
+ ;; Your init file should contain only one such instance.
+ ;; If there is more than one, they won't work right.
+ )
+(require 'package)
+
+;; If you want to use latest version
+(add-to-list 'package-archives '("melpa" . "https://melpa.org/packages/"))
+
+;; If you want to use last tagged version
+(add-to-list 'package-archives '("melpa-stable" . "https://stable.melpa.org/packages/"))
+(package-initialize)
+(add-to-list 'load-path "~/.emacs.d/elpa/yasnippet-0.12.0")
+(require 'yasnippet)
+(yas-global-mode 1)  
+(add-to-list 'load-path "~/.emacs.d/elpa/pos-tip-0.4.6")
+(add-to-list 'load-path "~/.emacs.d/elpa/fuzzy-0.1")
+(add-to-list 'load-path "~/.emacs.d/elpa/auto-complete-1.5.1")
+(require 'auto-complete-config)
+(add-to-list 'ac-dictionary-directories
+             "~/.emacs.d/elpa/auto-complete-1.5.1/dict")
+(ac-config-default)
+(require 'pos-tip)
+(setq ac-quick-help-prefer-pos-tip t)
+(setq ac-trigger-commands (cons 'backward-delete-char-untabify ac-trigger-commands))
+(setq ac-fuzzy-enable t)
+(add-to-list 'load-path "~/.emacs.d/elpa/yasnippet-0.12.0")
+(require 'yasnippet)
+(add-to-list 'load-path "~/.emacs.d/elpa/elpy-1.15.1")
+(require 'elpy)
+(electric-pair-mode t)
