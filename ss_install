@@ -15,6 +15,6 @@ config = '{
 }'
 
 # write to file
-echo $a > shadow.txt
+echo $config > shadow.txt
 
 echo '[*] Run nohup ssserver -c config_file.....the end...'
