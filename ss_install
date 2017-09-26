@@ -1,0 +1,20 @@
+apt-get install python2.7
+# install pip
+apt-get install python-pip
+# install ss
+pip install shadowsocks
+
+# set val
+config = '{
+"server":"0.0.0.0",
+"server_port":3333,
+"local_port":1080,
+"password":"12345678",
+"timeout":600,
+"method":"aes-256-cfb"
+}'
+
+# write to file
+echo $a > shadow.txt
+
+echo '[*] Run nohup ssserver -c config_file.....the end...'
